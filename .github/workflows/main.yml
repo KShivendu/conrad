@@ -10,17 +10,17 @@ jobs:
     name: Get events
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Save google service account credentials
-        shell: bash
-        env:
-          GOOGLE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
-        run: 'echo "$GOOGLE_SERVICE_ACCOUNT_CREDENTIALS" > google_service_account_credentials.json'
-      - id: python
-        name: Get Python events
-        uses: ./.github/actions/get-events-action
-        with:
-          crawler-name: "Python"
+      # - uses: actions/checkout@v2
+      # - name: Save google service account credentials
+      #   shell: bash
+      #   env:
+      #     GOOGLE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
+      #   run: 'echo "$GOOGLE_SERVICE_ACCOUNT_CREDENTIALS" > google_service_account_credentials.json'
+      # - id: python
+      #   name: Get Python events
+      #   uses: ./.github/actions/get-events-action
+      #   with:
+      #     crawler-name: "Python"
       - id: pycon
         name: Get PyCon events
         uses: ./.github/actions/get-events-action
